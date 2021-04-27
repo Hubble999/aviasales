@@ -1,0 +1,12 @@
+.container {
+  display: flex;
+  justify-content: space-between;
+  padding-left: 370px;
+  padding-right: 200px;
+}
+
+.logo {
+  display: flex;
+  justify-content: center;
+  margin: 25px;
+}
