@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import cn from 'classnames';
 import { actions } from '../../slices/tickets';
 import classes from './Buttons.module.css';
+import i18n from '../../locales/index.js';
 
 const Buttons = () => {
   const typeSort = useSelector((state) => state.tickets.sort);
@@ -25,13 +26,13 @@ const Buttons = () => {
         className={btnClassLeft}
         onClick={handleClickCheap}
       >
-        Самые дешевые
+        {i18n.t('cheap')}
       </button>
       <button
         className={btnClassRight}
         onClick={handleClickFast}
       >
-        Самые быстрые
+        {i18n.t('expensive')}
       </button>
     </div>
   );

@@ -2,10 +2,10 @@ import { createSelector } from '@reduxjs/toolkit';
 import sortTickets from '../utils/sortTickets.js';
 import numberOfTransfers from '../config/numberOfTransfers.js';
 
-const ticketsSelector = (state) => state.tickets.ticketsPack;
-const sortingTypeSelector = (state) => state.tickets.sort;
-const filtersSelector = (state) => state.tickets.filters;
-const filtersIdSelector = (state) => state.tickets.filterIds;
+export const ticketsSelector = (state) => state.tickets.ticketsPack;
+export const sortingTypeSelector = (state) => state.tickets.sort;
+export const filtersSelector = (state) => state.tickets.filters;
+export const filtersIdSelector = (state) => state.tickets.filterIds;
 
 export const filteredTicketsSelector = createSelector(
   [ticketsSelector, filtersSelector, filtersIdSelector],

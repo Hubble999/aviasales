@@ -1,6 +1,7 @@
 import React from 'react';
 import styles from './Error.module.css';
 import logo from '../../assets/logo_avia.png';
+import i18n from '../../locales/index.js';
 
 const Error = ({ error }) => {
   return (
@@ -9,7 +10,7 @@ const Error = ({ error }) => {
         <img className={styles.logo} src={logo} alt="логотип компании"/>
       </div>
       <span >Ошибка: {error}</span>
-      <p>Упс. Что-то пошло не так, попробуйте перезагрузить страницу.</p>
+      <p>{i18n.t('error')}</p>
     </div>
   );
 };
