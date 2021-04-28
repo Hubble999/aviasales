@@ -28,7 +28,7 @@ function App() {
           <TicketContainer />
         </div>
       </div>
-    </>
+      </>
   );
 }
 

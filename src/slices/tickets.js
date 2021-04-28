@@ -61,7 +61,7 @@ const ticketsSlice = createSlice({
     },
     [fetchTickets.rejected]: (state, { error }) => {
       state.loading = 'rejected';
-      state.errors = error.message;
+      state.error = error.message;
     },
   },
 });
