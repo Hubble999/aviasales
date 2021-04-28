@@ -17,14 +17,6 @@ const fetchTickets = createAsyncThunk('tickets/fetchTickets', async () => {
   }
 });
 
-/* [
-  { name: 'all', checked: true },
-  { name: 'wihtoutTransfers', stops: 0, checked: false },
-  { name: 'oneTransfer', stops: 1, checked: false },
-  { name: 'twoTransfers', stops: 2, checked: false },
-  { name: 'threeTransfers', stops: 3, checked: false },
-],
- */
 const ticketsSlice = createSlice({
   name: 'tickets',
   initialState: {
@@ -32,13 +24,19 @@ const ticketsSlice = createSlice({
     ticketsPack: [],
     sort: 'cheap',
     filters: {
-      all: true,
-      withoutTransfers: false,
+      all: false,
+      withoutTransfers: true,
       oneTransfer: false,
       twoTransfers: false,
       treeTransfers: false,
     },
-    filterIds: ['all', 'withoutTransfers', 'oneTransfer', 'twoTransfers', 'treeTransfers'],
+    filterIds: [
+      'all',
+      'withoutTransfers',
+      'oneTransfer',
+      'twoTransfers',
+      'treeTransfers',
+    ],
     errors: null,
   },
   reducers: {
@@ -48,18 +46,10 @@ const ticketsSlice = createSlice({
     },
     updateFilter(state, { payload }) {
       const { name, value } = payload;
-      if (name !== 'all' && state.filters.all === true) {
-        state.filters.all = false;
-      }
-      if (name === 'all' && value === true) {
-        state.filterIds.forEach((id) => {
-          if (id === name) {
-            state.filters[id] = true;
-          } else {
-            state.filters[id] = false;
-          }
-        });
+      if (name === 'all') {
+        state.filterIds.forEach((id) => (state.filters[id] = value));
       } else {
+        state.filters.all = false;
         state.filters[name] = value;
       }
     },
