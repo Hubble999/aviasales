@@ -1,8 +1,8 @@
 .container {
   display: flex;
   justify-content: space-between;
-  padding-left: 370px;
-  padding-right: 200px;
+  padding-left: 300px;
+  padding-right: 300px;
 }
 
 .logo {
