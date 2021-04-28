@@ -6,13 +6,11 @@ import { Provider } from 'react-redux';
 import ticketsReducer from '../src/slices/tickets';
 
 
-
 const store = configureStore({
   reducer: {
     tickets: ticketsReducer,
   }
 });
-
 
 ReactDOM.render(
   <Provider store={store}>
