@@ -1,14 +1,11 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import axios from 'axios';
+import routes from '../routes.js';
 
 const fetchTickets = createAsyncThunk('tickets/fetchTickets', async () => {
-  const {
-    data: { searchId },
-  } = await axios.get('https://front-test.beta.aviasales.ru/search');
+  const { data: { searchId } } = await axios.get(routes.getSearchIdPath());
   try {
-    const response = await axios.get(
-      `https://front-test.beta.aviasales.ru/tickets?searchId=${searchId}`,
-    );
+    const response = await axios.get(routes.getTicketsPath(searchId));
     const { tickets } = response.data;
     return tickets;
   } catch (err) {
