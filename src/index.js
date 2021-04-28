@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './components/App/App';
+import App from './components/App/App.jsx';
 import { configureStore } from '@reduxjs/toolkit'
 import { Provider } from 'react-redux';
 import ticketsReducer from '../src/slices/tickets';

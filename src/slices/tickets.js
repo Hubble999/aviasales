@@ -34,7 +34,7 @@ const ticketsSlice = createSlice({
       'twoTransfers',
       'treeTransfers',
     ],
-    errors: null,
+    error: null,
   },
   reducers: {
     updateSortType(state, { payload }) {

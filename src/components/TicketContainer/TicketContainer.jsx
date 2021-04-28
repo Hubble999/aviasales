@@ -5,19 +5,19 @@ import sortTickets from '../../selectors/selector.js';
 import Ticket from '../Ticket/Ticket';
 import Error from '../Error/Error';
 
-const TicketList = () => {
-  const state = useSelector(sortTickets);
-  const error = useSelector((state) => state.tickets.errors);
+const TicketContainer = () => {
+  const tickets = useSelector(sortTickets);
+  const error = useSelector((state) => state.tickets.error);
 
   return error ? (
     <Error error={error} />
   ) : (
     <div>
-      {state.map((data) => {
-        return <Ticket key={_.uniqueId()} data={data} />;
+      {tickets.map((data) => {
+        return <Ticket key={_.uniqueId()} data={data} />
       })}
     </div>
   );
 };
 
-export default TicketList;
+export default TicketContainer;

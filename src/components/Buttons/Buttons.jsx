@@ -7,7 +7,7 @@ import classes from './Buttons.module.css';
 const Buttons = () => {
   const typeSort = useSelector((state) => state.tickets.sort);
   const btnClassRight = cn(classes.btn, classes.right, {
-    [classes.active]: typeSort === 'fast',
+    [classes.active]: typeSort === 'expensive',
   });
   const btnClassLeft = cn(classes.btn, classes.left, {
     [classes.active]: typeSort === 'cheap',
@@ -17,7 +17,7 @@ const Buttons = () => {
     dispatch(actions.updateSortType({ type: 'cheap' }));
   };
   const handleClickFast = () => {
-    dispatch(actions.updateSortType({ type: 'fast' }));
+    dispatch(actions.updateSortType({ type: 'expensive' }));
   };
   return (
     <div className={classes.container}>
