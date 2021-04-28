@@ -1,6 +1,6 @@
 import { DateTime, Duration } from 'luxon';
 
-export default ({ date, duration }) => {
+const formatTime = ({ date, duration }) => {
   const dataArrival = DateTime.fromISO(date);
   const msInMinute = 60 * 1000;
   const dataDuration = Duration.fromMillis(duration * msInMinute);
@@ -9,3 +9,5 @@ export default ({ date, duration }) => {
   const formatTimeLocale = dataDuration.toFormat("hh'ч 'mm'м'");
   return [formatTime, formatTimeLocale];
 };
+
+export default formatTime;

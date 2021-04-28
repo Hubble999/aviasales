@@ -1,4 +1,4 @@
-export default {
+const ru = {
   translation: {
     transfers: {
       counter: {
@@ -19,3 +19,5 @@ export default {
     error: 'Упс. Что-то пошло не так, попробуйте перезагрузить страницу.',
   },
 };
+
+export default ru;
