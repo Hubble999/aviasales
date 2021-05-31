@@ -1,13 +1,13 @@
 .container {
   display: flex;
   flex-direction: column;
-  font-family: Open Sans;
   font-size: 14px;
-  height: 268px;
+  height: 263px;
   width: 232px;
-  background: #FFFFFF;
-  box-shadow: 0px 2px 8px 0px #0000001A;
+  background: #ffffff;
+  box-shadow: 0px 2px 8px 0px #0000001a;
   border-radius: 5px;
+  margin-right: 25px;
 }
 
 .description {
@@ -33,8 +33,8 @@
   padding: 10px;
 }
 
-.check:hover{
-  background: #F1FCFF;
+.check:hover {
+  background: #bef0fd;
   cursor: pointer;
 }
 
@@ -44,23 +44,23 @@
   appearance: none;
 }
 
-.check__box{
+.check__box {
   position: absolute;
   margin-left: 10px;
   width: 18px;
   height: 18px;
-  border: 1px solid #9ABBCE;
+  border: 1px solid #9abbce;
   box-sizing: border-box;
-  border-radius: 2px; 
+  border-radius: 2px;
 }
 
-.check__text{
+.check__text {
   margin-left: 2.5em;
-  color: #4A4A4A;
+  color: #4a4a4a;
 }
 
 .check__input:checked + .check__box {
-  border: 1px solid #2196F3;
+  border: 1px solid #2196f3;
   background-image: url("data:image/svg+xml,%3Csvg width='12' height='8' viewBox='0 0 12 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M4.28571 8L0 4.16123L1.20857 3.0787L4.28571 5.82726L10.7914 0L12 1.09021L4.28571 8Z' fill='%232196F3'/%3E%3C/svg%3E%0A");
   background-repeat: no-repeat;
   background-position: 50% 50%;
@@ -68,5 +68,11 @@
 }
 
 .check__input:focus + .check__box {
-   box-shadow: 0 0 0 1.5px #2196F3;
+  box-shadow: 0 0 0 1.5px #2196f3;
+}
+
+@media (max-width: 745px) {
+  .container {
+    display: none;
+  }
 }

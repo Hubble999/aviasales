@@ -1,12 +1,17 @@
 .container {
   display: flex;
-  justify-content: space-between;
-  padding-left: 300px;
-  padding-right: 300px;
+  justify-content: center;
 }
 
 .logo {
   display: flex;
   justify-content: center;
   margin: 25px;
+}
+
+@media (max-width: 520px) {
+  .container {
+    flex-direction: column;
+    max-width: 502px;
+  }
 }
